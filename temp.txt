@@ -1,0 +1,36 @@
+(menv-metadata) jrvis@192 Workspace % 
+(menv-metadata) jrvis@192 Workspace % 
+(menv-metadata) jrvis@192 Workspace % uv pip uninstall mcp-openmetadata                     
+Using Python 3.13.5 environment at: menv-metadata
+Uninstalled 1 package in 9ms
+ - mcp-openmetadata==0.1.0
+(menv-metadata) jrvis@192 Workspace % uv pip install git+https://github.com/yangkyeongmo/mcp-server-openmetadata
+Using Python 3.13.5 environment at: menv-metadata
+Resolved 27 packages in 882ms
+    Updated https://github.com/yangkyeongmo/mcp-server-openmetadata (a136515734d8dda80b61005b84bd1ea7073eec09)
+      Built mcp-server-openmetadata @ git+https://github.com/yangkyeongmo/mcp-server-openmetadata@a136515734d8dda80b61005b84bd1ea7073eec09
+Prepared 1 package in 2.47s
+Installed 1 package in 0.89ms
+ + mcp-server-openmetadata==0.2.1 (from git+https://github.com/yangkyeongmo/mcp-server-openmetadata@a136515734d8dda80b61005b84bd1ea7073eec09)
+(menv-metadata) jrvis@192 Workspace % mcp-server-openmetadata --help
+Usage: mcp-server-openmetadata [OPTIONS]
+
+  Start the MCP OpenMetadata server with selected API groups.
+
+Options:
+  --transport [stdio|sse]         Transport type for MCP communication
+  --apis [table|database|databaseschema|dashboard|chart|pipeline|topic|metrics|container|report|mlmodel|user|team|classification|glossary|tag|bot|services|event|lineage|usage|search|test_case|test_suite|policy|role|domain]
+                                  API groups to enable (default: core entities
+                                  and common assets)
+  --read-only                     Only expose read-only tools (GET operations,
+                                  no CREATE/UPDATE/DELETE)
+  --help                          Show this message and exit.
+(menv-metadata) jrvis@192 Workspace % export OPENMETADATA_URI="http://127.0.0.1:8585/api/v1"
+export OPENMETADATA_JWT_TOKEN="eyJraWQiOiJHYjM4OWEtOWY3Ni1nZGpzLWE5MmotMDI0MmJrOTQzNTYiLCJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJvcGVuLW1ldGFkYXRhLm9yZyIsInN1YiI6ImFkbWluIiwicm9sZXMiOlsiQWRtaW4iXSwiZW1haWwiOiJhZG1pbkBvcGVuLW1ldGFkYXRhLm9yZyIsImlzQm90IjpmYWxzZSwidG9rZW5UeXBlIjoiUEVSU09OQUxfQUNDRVNTIiwiaWF0IjoxNzUyNjA3MjI3LCJleHAiOjE3NjAzODMyMjd9.sMi4Ztr1nf8u5I9ydJzuI90QnlCSKzhFF_5IY9rFBxS4tWXvsEL7wK6eAOSS4gqwvIH2PJITe5UYGFhIYbk4Hl9joRaM1ttU9ssON5BBZXzXqDaf-SDu50c2xGyJCFoOYQgl2wWACtYH15ICqZ5Qc0SqECCd3DadAM2N9_8zDjE1CyHwx0bMg614SLZw_Og9aYJvnGb-en28SKC9WHnIr-mgi9mXgAyq_7vBrBPsUytuppdIbKBnpC4JagN48z5P8vs8BqjQ5BXOsicPpI0gN2LwiexzPzfewPsbyA1oi7AcegczdjuTT7Aey_j_sH5jA3mblkYYuuUW3XJJfj-F7Q"
+mcp-server-openmetadata --port 8000
+Usage: mcp-server-openmetadata [OPTIONS]
+Try 'mcp-server-openmetadata --help' for help.
+
+Error: No such option: --port Did you mean --transport?
+(menv-metadata) jrvis@192 Workspace % mcp-server-openmetadata --transport sse
+
